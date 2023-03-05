@@ -1,0 +1,18 @@
+
+States:
+1. Not deposited
+2. Deposited
+3. Withdrawn
+
+Property 1: Unit Test: The amount of shares received by the depositor should be the same as the amount of ETH deposited
+Property 2: Unit Test: The depositor should receive the the amount deposited when called withdraw
+Property 3: High Level: totalFeesEarnedPerShare should never be greater than any account's feesCollectedPerShare
+Property 4: High Level: Should not receive any fees if totalFeesEarnedPerShare == 0
+Property 5: Variable Transitions: totalFeesEarnedPerShare can never decrease
+Property 6: High Level: Once withdrawn and collected fees, user should not be able to take any more funds from the contract
+Property 7: Variable Transitions: If shares are decreased, its only through withdraw
+Property 8: Variable Transitions: If shares are increased, its only through deposit
+Property 9: Valid State: If shares != 0 then in deposited state
+Property 10: State Transitions: If shares !=0 and then shares == 0, user withdrawn
+Property 11: High Level: eth balance of the contract should never be zero as long as other people have shares
+Property 12: High Level: Everyone should be able to withdraw if they have deposited funds.
